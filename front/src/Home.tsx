@@ -62,25 +62,21 @@ const Home = () => {
     
             <div>
                     <br />
-                    <Button onClick={() => {setLogin(true) 
-                      setSignup(false)}}>
+                    <Button onClick={() => {setLogin(true); 
+                      setSignup(false);}}>
                         LogIn
                     </Button>
-                    <Button onClick={() => {setSignup(true)
-                       setLogin(false)}}>
+                    <Button onClick={() => {setSignup(true);
+                       setLogin(false);}}>
                         Sign Up
                     </Button>
                     <br/>
-                    {login ? <LogIn reRender = {()=> setRender(!render)}/> : 
-                    <div>
-                        {signup ? <SignUp reRender = {()=> setRender(!render)}/> : <div>
-                          <h1>Welcome to WikiFilms</h1>
-                          </div>}
-                    </div>}
+                    {login && <LogIn reRender = {()=> setLogin(false)}/> }
+                   
+                    {signup && <SignUp reRender = {()=> setSignup(false)}/> }
+                    <br/>
                             
              </div>}
-            
-
 
         </div>
         );
